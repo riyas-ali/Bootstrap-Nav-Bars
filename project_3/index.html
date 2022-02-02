@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
+<!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+ <!-- CUSTOM CSS -->
+    <link href="style.css" type="text/css" rel="stylesheet">
+
+    <title>Nav Project_3</title>
+
+  </head>
+  <body data-spy="scroll" data-target="#navbar-example2" data-offset="50" >
+    <!-- NAV -->
+    <header>
+      <nav id="navbar-example2" class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+        <a class="navbar-brand" href="#logo"><img src="Images/third-logo-gray.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav  ml-auto nav-pills">
+            <li class="nav-item"><a class="nav-link hvr-underline-from-center" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link hvr-underline-from-center" href="#about">About Me</a></li>
+            <li class="nav-item"><a class="nav-link hvr-underline-from-center" href="#skill">Skills</a></li>
+            <li class="nav-item"><a class="nav-link hvr-underline-from-center" href="#service">Service</a></li>
+            <li class="nav-item"><a class="nav-link hvr-underline-from-center" href="#portfolio">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link hvr-underline-from-center" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      </nav>
+    </header>
+    
+    <!-- Banner -->
+    <section class="banner"></section>
+
+    <!-- Dummy for scroll -->
+    <div class="dummy"></div>
+
+            <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+<!-- STICKY NAVBAR SCROLL EFFECT --> 
+<script src="script/nav.js"></script> 
+<script type="text/javascript">
+
+    function init() {
+        window.addEventListener('scroll', function(e){
+            var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+                shrinkOn = 100,
+                header = document.querySelector("header");
+            if (distanceY > shrinkOn) {
+                classie.add(header,"smaller");
+            } else {
+                if (classie.has(header,"smaller")) {
+                    classie.remove(header,"smaller");
+                }
+            }
+        });
+    }
+    window.onload = init();
+</script> 
+    <!-- STICKY LOGO CHANGE --> 
+    <script>
+     $(window).scroll(function() {
+if ($(".navbar").offset().top > 50) {
+    $('#custom-nav').addClass('affix');
+    $(".navbar-fixed-top").addClass("top-nav-collapse");
+    $('.navbar-brand img').attr('src','images/third-logo-blue.png'); //change src
+} else {
+    $('#custom-nav').removeClass('affix');
+    $(".navbar-fixed-top").removeClass("top-nav-collapse");
+    $('.navbar-brand img').attr('src','images/third-logo-gray.png')
+}   
+});
+      </script>
+
+ <!----------Toggle Close---------> 
+<script>
+ const navLinks = document.querySelectorAll('.nav-item')
+const menuToggle = document.getElementById('navbarSupportedContent')
+const bsCollapse = new bootstrap.Collapse(menuToggle)
+navLinks.forEach((l) => {
+    l.addEventListener('click', () => { bsCollapse.toggle() })
+})
+ </script> 
+ 
+  </body>
+</html>
